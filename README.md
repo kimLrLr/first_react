@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# ex02
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+\*jsx문법 규칙
+=>태그가 2개 이상일 땐 반드시 부모 태그로 닫아줘야됨
 
-## Available Scripts
+\*컴포넌트
+=> 레이아웃과 비슷하게 디자인의 하나의 영역을 뜻함
+=> 컴포넌트 제작시 파일명과 함수명은 동일해야 하며,
+첫 글자는 대문자로 시작할 것.
+=> 컴포넌트 함수를 제작후 내보내기 export를 해줘야함
+=> 태그는 반드시 닫아줄 것
 
-In the project directory, you can run:
+\*내보내기 불러오기
+=> import 불러오기
+=> export 내보내기
 
-### `npm start`
+\*export
+=> export default는 반드시 파일당 하나만 사용 가능
+=> 한 파일에서 2개 이상 내보내기를 해야하는 경우,
+함수 명 앞으로 export 사용함.
+=> import 시에 {}중괄호 안에 가져올 함수명 넣기
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+\*export를 함수 앞에 붙여서 내보낼 수 있음,
+단 import할 때에는 {}를 사용하여 다중 컴포넌트를
+불러올 수 있음
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+# ex03
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+\*jsx 문법 내부에서 변수를 사용할 땐
+{}중괄호를 사용할 것
 
-### `npm run build`
+# ex04
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+\*fragment 태그
+=> jsx 문법 사용 규칙에 따라 부모 태그로 묶어줘야 하는 경우, 엑스트라 태그를 생성할 수밖에 없게 되는데, 이 경우에 보기 싫은 <div></div>태그 대신
+<></>로 대신해서 사용할 수 있음
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+\*map 함수
+=> 반드시 배열로 작성해야함
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+\*map()
+=> 배열을 기준으로 배열의 요소값을 새로운 값으로 반환하는 역할을 함
+=> 반드시 유니크한(고유값) key값을 넣어줘야함
 
-### `npm run eject`
+# ex05
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+\*styled에서 props를 사용
+${(props) => props.$변수명}
+<Box $변수명={""}></Box>
+이런 식으로 사용함
+props부분은 국룰이므로 변형x
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# ex06
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+\*GlobalStyled
+=> 전체 영역에서 사용할 수 있는 스타일 처리법
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+\*자기 자신을 한 번 더 선택하는 경우 &를 사용
+예를 들어, hover이벤트 사용 시,
+&:hover{...}
 
-## Learn More
+# ex07
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+\*hooks
+const [변수명, set변수명] = useState(값);
+위 코드가 let 변수명 = 값;
+과 동일한 느낌
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+\*useState()
+=> react hook 종류중 하나로 변수를 정의하고 값을 변경할 때 사용
+=> 배열 비구조화 할당을 이용하며 첫번째 값은 변수,
+두번째 값은 변수를 변경할 수 있는 함수로 정의
+단, set이라는 이름을 붙여줘야됨
+ex)
+const [변수명, set변수명] = useState(변수값);
