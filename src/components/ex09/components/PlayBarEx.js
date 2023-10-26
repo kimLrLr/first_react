@@ -18,7 +18,15 @@ const PlayTime = styled.div`
   z-index: 10;
 `;
 
-const TimeWrap = styled.div``;
+const TimeWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  top: -30px;
+  left: 0;
+`;
 
 const StartTime = styled.div``;
 
