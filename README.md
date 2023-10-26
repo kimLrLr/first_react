@@ -75,3 +75,67 @@ const [변수명, set변수명] = useState(값);
 단, set이라는 이름을 붙여줘야됨
 ex)
 const [변수명, set변수명] = useState(변수값);
+
+# ex11
+
+\*React Router 사용법
+npm i react-router-dom
+=> 위 코드로 설치
+return (
+<BrowserRouter>
+<Routes>
+<Route />
+</Routes>
+</BrowserRouter>
+);
+
+\*Route의 속성
+<Route path="/" element={<보여줄 Component명 />} />
+
+\*HashRouter
+<HashRouter>
+<Routes>
+<Route path="/" element={<Home />} />
+<Route path="/sub01" element={<Sub01 />} />
+<Route path="/sub02" element={<Sub02 />} />
+</Routes>
+</HashRouter>
+=>HashRouter은 주소창에
+http://localhost:3000/#/sub01
+이런 식으로 #을 추가해줘야함
+
+\*404 에러 처리
+<Route path="/\*" element={<NotFound />} />
+=>path 안에 /\*임 \ 빼야함..
+
+\*react router을 사용하려면 꼭!!
+
+<Link> component를 사용
+
+<Link to={"/"}>LOGO</Link>
+=>이런 식으로 사용
+
+\*각 페이지 타이틀 정의(Helmet)
+npm i react-helmet
+=> cmd로 설치
+
+ex)
+<Helmet>
+
+<title>HOME</title>
+</Helmet>
+
+여기서 props를 사용할 수 있음!
+
+ex)
+<Helmet>
+
+<title>{name}</title>
+</Helmet>
+=> Title을 바꾸는 코드를 컴포넌트로 작성
+
+export const PageTitle = ({ name })
+=>이렇게 하면 다른 곳에서
+
+<PageTitle name={"Home"} />
+=>이런 식으로 변수처리 가능!
