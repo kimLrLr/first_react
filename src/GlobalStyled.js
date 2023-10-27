@@ -13,6 +13,7 @@ export const fontSize = {
 
 export const colors = {
   darkGray: "#1d1d1d",
+  black: "#333",
 };
 
 export const GlobalStyled = createGlobalStyle`
@@ -22,5 +23,9 @@ export const GlobalStyled = createGlobalStyle`
     }
     body{
         font-family: 'Noto Sans KR', sans-serif;
+    }
+    a{
+      text-decoration: none;
+      color: ${colors.darkGray};
     }
 `;
