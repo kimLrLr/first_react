@@ -139,3 +139,7 @@ export const PageTitle = ({ name })
 
 <PageTitle name={"Home"} />
 =>이런 식으로 변수처리 가능!
+
+# ex12
+
+\*request 요청 respon 응답
