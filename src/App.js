@@ -12,6 +12,7 @@ import { Ex09 } from "./components/ex09/Ex09";
 import { Ex10 } from "./components/ex10/Ex10";
 import { Ex11 } from "./components/ex11/Ex11";
 import { Ex12 } from "./components/ex12/Ex12";
+import { Ex14 } from "./components/ex14/Ex14";
 import { TEx12 } from "./components/tEx12/TEx12";
 
 const App = () => {
@@ -55,8 +56,11 @@ const App = () => {
       {/* 11일차 */}
 
       {/* <Ex12 /> */}
-      <TEx12 />
-      {/* 12일차 */}
+      {/* <TEx12 /> */}
+      {/* 12~13일차 */}
+
+      <Ex14 />
+      {/* 14일차 */}
     </div>
   );
 };

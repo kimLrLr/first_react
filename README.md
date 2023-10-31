@@ -143,3 +143,57 @@ export const PageTitle = ({ name })
 # ex12
 
 \*request 요청 respon 응답
+
+# ex14
+
+- react hook form에 대하여
+
+npm install react-hook-form
+=> cmd로 설치
+
+\*useFore()
+const { register, handleSubmit } = useForm();
+=> hook의 useForm 사용
+
+<Form onSubmit={handleSubmit(우리가 실행시킬 함수명)}>
+=> 우리가 실행시킬 함수명 작성
+
+name=""대신에 {...register("name명", {
+옵션들(required 등..)
+})}
+
+- required는 필수적인 요소인지 아닌지
+
+ex)
+<Input
+{...register("password", {
+required: true,
+})}
+type="text"
+placeholder="패스워드"
+/>
+
+const loginHandler = (data) => {
+//이벤트 함수 매개변수의 첫 번재 자리는 유저가 입력한 내용을 객체형태로 반환함
+console.log(data);
+};
+
+\*formState:{}
+
+const {
+register,
+handleSubmit,
+formState: { errors },
+} = useForm();
+=>요기에 errors로 넣고
+
+{...register("username", {
+required: "아이디는 필수 입니다.",
+})}
+=>input태그에 작성
+
+console.log(errors && errors.username && errors.username.message);
+=> 위같은 코드를
+console.log(errors?.username?.message);
+=> 이렇게 작성할 수 있음. 이를 "옵셔널 체이닝(optional chaining) 연산자"라고 표현
+=> && 연산자로 객체에 접근하는 것 보다 옵셔널 체이닝을 이용하여 객체 안에 있는 객체를 쉽게 접근할 수 있음
