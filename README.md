@@ -197,3 +197,22 @@ console.log(errors && errors.username && errors.username.message);
 console.log(errors?.username?.message);
 => 이렇게 작성할 수 있음. 이를 "옵셔널 체이닝(optional chaining) 연산자"라고 표현
 => && 연산자로 객체에 접근하는 것 보다 옵셔널 체이닝을 이용하여 객체 안에 있는 객체를 쉽게 접근할 수 있음
+
+# ex15
+
+\*useForm
+=> 폼 관련 패키지
+ex)
+const {
+register, //input태그 name 및 등록역할
+handleSubmit, // form태그 이벤트 등록
+formState:{errors, isValid} //form상태를 관리
+//errors: form 유효성 검사 후 에러를 객체로 반환함,
+//isValid: form 상태가 유효한지 boolean 값으로 반환
+} = useForm({
+mode: "onChange" //form모드로 유효성 검사를 어떻게 처리할지 값은 작성할 수 있음
+});
+
+<input {...register("name명",{
+required: "" // 현 input값이 필수값인지 아닌지 boolean값 및 문자열로 작성 가능
+})}>

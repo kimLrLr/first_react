@@ -51,14 +51,22 @@ const Button = styled.button`
   font-size: 18px;
   font-weight: 600;
   color: white;
+  opacity: ${(props) => (props.$isActive ? 1 : 0.5)};
+  cursor: ${(props) => (props.$isActive ? "pointer" : "default")};
 `;
 
 export const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm();
+    formState: { errors, isValid },
+  } = useForm({
+    mode: "onChange",
+    // => 기본적으로 onChange로 잡혀있음
+  });
+
+  // console.log(isValid);
+  // => 유효성 검사 후 boolean값으로 반환함
 
   // console.log(errors && errors.username && errors.username.message);
   console.log(errors?.username?.message);
@@ -87,13 +95,24 @@ export const Login = () => {
         <Input
           {...register("password", {
             required: "패스워드는 필수 입니다.",
+            minLength: {
+              value: 8,
+              message: "비밀번호는 8자리 이상 작성해 주세요.",
+            },
+            // => 최소 길이
+            pattern: {
+              value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+              message: "숫자와 문자를 합쳐서 사용 가능",
+            },
+            // ex) 비밀번호는 8자리 이상, 특수문자 포함 대소문자 포함,
+            // => pattern: /여기에 작성/
           })}
           type="password"
           placeholder="패스워드"
         />
         <ErrorMsg Message={errors?.password?.message} />
 
-        <Button>로그인</Button>
+        <Button $isActive={isValid}>로그인</Button>
       </Form>
     </Wrap>
   );
